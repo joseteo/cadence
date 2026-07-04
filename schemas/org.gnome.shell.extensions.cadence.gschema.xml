@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.cadence"
+          path="/org/gnome/shell/extensions/cadence/">
+
+    <key name="widget-width" type="i">
+      <default>280</default>
+      <summary>Widget width</summary>
+      <description>
+        Width of the media player widget in pixels
+        Range: 160 – 500
+      </description>
+      <range min="160" max="500"/>
+    </key>
+
+    <key name="background-opacity" type="d">
+      <default>0.5</default>
+      <summary>Background opacity</summary>
+      <description>
+        Opacity of the media player widget
+        0 = fully transparent, 1 = fully opaque
+      </description>
+      <range min="0.0" max="1.0"/>
+    </key>
+
+    <key name="show-artist" type="b">
+      <default>true</default>
+      <summary>Show artist name</summary>
+      <description>
+        Shows artist name below the song title
+      </description>
+    </key>
+
+    <key name="show-controls" type="b">
+      <default>true</default>
+      <summary>Show playback controls</summary>
+      <description>
+        Shows media control buttons
+      </description>
+    </key>
+
+    <key name="tint-from-art" type="b">
+      <default>true</default>
+      <summary>Tint the widget from the album art</summary>
+      <description>
+        When enabled, the widget background is tinted with the dominant colour of
+        the current album art. When disabled, a neutral dark background is used.
+      </description>
+    </key>
+
+    <key name="show-on-all-monitors" type="b">
+      <default>false</default>
+      <summary>Show the widget on all monitors</summary>
+      <description>
+        When enabled, the widget appears on every dock (all monitors). When
+        disabled, it only appears on the primary monitor's dock.
+      </description>
+    </key>
+
+    <key name="animation-duration" type="i">
+      <default>300</default>
+      <summary>Animation duration</summary>
+      <description>
+        Duration of expand and collapse animations of the widget
+        Set to 0 to disable animations
+        Valid range: 0 – 1000
+      </description>
+      <range min="0" max="1000"/>
+    </key>
+
+    <key name="widget-position" type="s">
+      <default>'end'</default>
+      <summary>Widget position in dock</summary>
+      <description>
+        Where to show the widget inside the dock
+        'start' places it before the app icons, 'end' places it after them.
+      </description>
+      <choices>
+        <choice value="start"/>
+        <choice value="end"/>
+      </choices>
+    </key>
+
+  </schema>
+</schemalist>

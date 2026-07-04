@@ -1,0 +1,12 @@
+{
+  "name": "Cadence",
+  "description": "Media player widget embedded in the dock. Shows the current track, album art and playback controls, and tints itself to match the cover.",
+  "uuid": "cadence@joseteo.github.com",
+  "settings-schema": "org.gnome.shell.extensions.cadence",
+  "shell-version": [
+    "46"
+  ],
+  "url": "https://github.com/joseteo/cadence",
+  "version": 1,
+  "version-name": "1.0"
+}
