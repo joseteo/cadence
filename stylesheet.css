@@ -1,0 +1,122 @@
+/* Cadence - dock media card styling.
+ *
+ * The card mirrors the dock's app-icon hover background (.overview-icon: 6px padding,
+ * 16px radius, from the gnome-shell theme) so it blends in as one more dock item. The
+ * album art inside is exactly the app-icon size, so card = icon + padding matches a
+ * hovered icon's footprint. Keep the padding/radius in step with .cadence-art, which
+ * stays concentric: art radius 10 = card radius 16 minus the 6px padding.
+ */
+.cadence-card {
+    padding: 6px;
+    spacing: 12px;
+    border-radius: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.cadence-row {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Concentric with the card: the card's 16px radius minus the 6px padding. */
+.cadence-art {
+    border-radius: 10px;
+}
+
+.cadence-meta {
+    spacing: 0px;
+    margin-left: 8px;
+}
+
+.cadence-title {
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    min-width: 0;
+}
+
+.cadence-meta-bottom {
+    spacing: 8px;
+}
+
+.cadence-artist {
+    font-size: 10px;
+    color: #cccccc;
+    min-width: 0;
+}
+
+/* The controls sit in their own column beside the metadata, not under the title. */
+.cadence-controls {
+    spacing: 6px;
+    margin-left: 10px;
+}
+
+.cadence-play,
+.cadence-next,
+.cadence-prev {
+    padding: 8px;
+    border-radius: 999px;
+    transition-duration: 150ms;
+}
+
+.cadence-play:hover,
+.cadence-next:hover,
+.cadence-prev:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cadence-play:active,
+.cadence-next:active,
+.cadence-prev:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.cadence-play StIcon,
+.cadence-next StIcon,
+.cadence-prev StIcon {
+    icon-size: 16px;
+}
+
+/* Play/pause is the primary action, so it reads a step larger than skip. */
+.cadence-play {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cadence-play StIcon {
+    icon-size: 18px;
+}
+
+/* ---- Vertical dock: prev / art / next stacked in one icon-wide column ---- */
+/* Inherits the 6px padding so the tinted pill equals the app-icon hover-background
+   width (icon + 6px). Only the inter-child spacing is dropped, since the column
+   manages its own gaps; a small left margin centres it on the app-icon axis. */
+.cadence-card.cadence-vertical {
+    spacing: 0;
+    margin-left: 4px;
+}
+
+.cadence-column {
+    spacing: 4px;
+}
+
+/* Play/pause glyph over the art, on a dim circular scrim so it reads over any cover.
+   The art tile itself is the click target. */
+.cadence-overlay {
+    icon-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 999px;
+    padding: 6px;
+    transition-duration: 150ms;
+}
+
+/* Hover feedback: the art tile is the play/pause button in the vertical column, so a
+   faint ring appears and the scrim brightens to signal it is clickable. */
+.cadence-art:hover {
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+
+.cadence-art:hover .cadence-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
