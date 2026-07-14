@@ -32,9 +32,7 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 ## Screenshots
 
-| Horizontal dock | Vertical dock |
-|:-:|:-:|
-| ![Horizontal](https://raw.githubusercontent.com/joseteo/cadence/main/.github/screenshot-horizontal.png) | ![Vertical](https://raw.githubusercontent.com/joseteo/cadence/main/.github/screenshot-vertical.png) |
+*Coming soon*
 
 ## Installation
 
