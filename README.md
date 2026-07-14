@@ -32,9 +32,9 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 ## Demo
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/joseteo/cadence/main/.github/demo.gif" alt="Cadence demo" width="720" />
-</p>
+| Horizontal dock | Vertical dock |
+|:-:|:-:|
+| ![Horizontal demo](https://raw.githubusercontent.com/joseteo/cadence/main/.github/demo.gif) | ![Vertical demo](https://raw.githubusercontent.com/joseteo/cadence/main/.github/demo-vertical.gif) |
 
 ## Screenshots
 
