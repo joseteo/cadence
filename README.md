@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/joseteo/cadence/main/.github/banner.png" alt="Cadence" width="720" />
+  <img src="https://raw.githubusercontent.com/joseteo/cadence/main/.github/banner.png" alt="Cadence" width="280" />
 </p>
 
 <h1 align="center">Cadence</h1>
@@ -32,7 +32,9 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 ## Screenshots
 
-*Coming soon*
+| Horizontal dock | Vertical dock |
+|:-:|:-:|
+| ![Horizontal](https://raw.githubusercontent.com/joseteo/cadence/main/.github/screenshot-horizontal.png) | ![Vertical](https://raw.githubusercontent.com/joseteo/cadence/main/.github/screenshot-vertical.png) |
 
 ## Installation
 
