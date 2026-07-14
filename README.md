@@ -30,6 +30,12 @@ and gives you at-a-glance track info plus controls without opening a window.
 - **Auto-hide** - disappears when nothing is playing
 - **Vertical dock support** - compact layout for left/right dock positions
 
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/joseteo/cadence/main/.github/demo.gif" alt="Cadence demo" width="720" />
+</p>
+
 ## Screenshots
 
 | Horizontal dock | Vertical dock |
