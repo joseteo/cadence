@@ -24,6 +24,14 @@
     border-radius: 10px;
 }
 
+.cadence-art-circle {
+    border-radius: 999px;
+}
+
+.cadence-art-square {
+    border-radius: 0;
+}
+
 .cadence-meta {
     spacing: 0px;
     margin-left: 8px;

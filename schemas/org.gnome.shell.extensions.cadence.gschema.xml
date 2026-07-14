@@ -8,7 +8,7 @@
       <summary>Widget width</summary>
       <description>
         Width of the media player widget in pixels
-        Range: 160 – 500
+        Range: 160 - 500
       </description>
       <range min="160" max="500"/>
     </key>
@@ -63,7 +63,7 @@
       <description>
         Duration of expand and collapse animations of the widget
         Set to 0 to disable animations
-        Valid range: 0 – 1000
+        Valid range: 0 - 1000
       </description>
       <range min="0" max="1000"/>
     </key>
@@ -79,6 +79,79 @@
         <choice value="start"/>
         <choice value="end"/>
       </choices>
+    </key>
+
+    <key name="scroll-action" type="s">
+      <default>'volume'</default>
+      <summary>Scroll action</summary>
+      <description>
+        What happens when you scroll over the widget.
+        'volume' changes the player volume, 'track' skips forward/backward,
+        'none' disables scroll.
+      </description>
+      <choices>
+        <choice value="volume"/>
+        <choice value="track"/>
+        <choice value="none"/>
+      </choices>
+    </key>
+
+    <key name="click-action" type="s">
+      <default>'open-player'</default>
+      <summary>Click action</summary>
+      <description>
+        What happens when you click on the album art or empty card area.
+        'open-player' raises the player window, 'play-pause' toggles playback,
+        'none' does nothing.
+      </description>
+      <choices>
+        <choice value="open-player"/>
+        <choice value="play-pause"/>
+        <choice value="none"/>
+      </choices>
+    </key>
+
+    <key name="font-scale" type="d">
+      <default>1.0</default>
+      <summary>Font scale</summary>
+      <description>
+        Scale factor for the title and artist text.
+        1.0 is the default size, 0.8 is smaller, 1.4 is larger.
+      </description>
+      <range min="0.6" max="1.6"/>
+    </key>
+
+    <key name="corner-radius" type="i">
+      <default>16</default>
+      <summary>Corner radius</summary>
+      <description>
+        Border radius of the card in pixels.
+        Set to 0 for sharp corners, up to 24 for very rounded.
+      </description>
+      <range min="0" max="24"/>
+    </key>
+
+    <key name="art-style" type="s">
+      <default>'rounded'</default>
+      <summary>Album art style</summary>
+      <description>
+        Shape of the album art thumbnail.
+        'rounded' uses concentric corners with the card, 'circle' makes it
+        fully round, 'square' removes all rounding.
+      </description>
+      <choices>
+        <choice value="rounded"/>
+        <choice value="circle"/>
+        <choice value="square"/>
+      </choices>
+    </key>
+
+    <key name="show-album-art" type="b">
+      <default>true</default>
+      <summary>Show album art</summary>
+      <description>
+        Display the album art thumbnail in the widget
+      </description>
     </key>
 
   </schema>
