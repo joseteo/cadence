@@ -107,9 +107,17 @@ luminance check to ensure readable text.
 Issues and pull requests are welcome. If you'd like to add support for another
 GNOME Shell version, testing and reporting is the most valuable contribution.
 
+## Support
+
+If you find Cadence useful, consider buying me a coffee :)
+
+<a href="https://paypal.me/joseteolorente">
+  <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?logo=paypal&logoColor=white&style=for-the-badge" alt="Donate with PayPal" />
+</a>
+
 ## Author
 
-**José Teo Lorente**
+**Jose Teo Lorente**
 
 - [joseteo.github.io](https://joseteo.github.io)
 - [github.com/joseteo](https://github.com/joseteo)
