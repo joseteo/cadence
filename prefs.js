@@ -306,7 +306,7 @@ export default class DockMediaPlayerPreferences extends ExtensionPreferences
 
         const authorGroup = new Adw.PreferencesGroup({ title: 'Author' });
         page.add(authorGroup);
-        authorGroup.add(new Adw.ActionRow({ title: 'Jose Teo Lorente', subtitle: 'Creator and Developer' }));
+        authorGroup.add(new Adw.ActionRow({ title: 'José Teo Lorente', subtitle: 'Creator and Developer' }));
         authorGroup.add(this._makeLinkRow('Website', 'joseteo.github.io', 'https://joseteo.github.io'));
         authorGroup.add(this._makeLinkRow('GitHub', 'github.com/joseteo', 'https://github.com/joseteo'));
 

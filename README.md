@@ -117,7 +117,7 @@ If you find Cadence useful, consider buying me a coffee :)
 
 ## Author
 
-**Jose Teo Lorente**
+**José Teo Lorente**
 
 - [joseteo.github.io](https://joseteo.github.io)
 - [github.com/joseteo](https://github.com/joseteo)
