@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://extensions.gnome.org/extension/TODO/cadence/"><img src="https://img.shields.io/badge/EGO-Install-4A86CF?logo=gnome&logoColor=white" alt="Install from EGO" /></a>
+  <a href="https://extensions.gnome.org/extension/10446/cadence/"><img src="https://img.shields.io/badge/EGO-Install-4A86CF?logo=gnome&logoColor=white" alt="Install from EGO" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--2.0--or--later-blue" alt="GPL-2.0-or-later" /></a>
   <img src="https://img.shields.io/badge/GNOME_Shell-46-green?logo=gnome&logoColor=white" alt="GNOME 46" />
 </p>
@@ -46,7 +46,7 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 ### From extensions.gnome.org (recommended)
 
-Visit the [Cadence page on EGO](https://extensions.gnome.org/extension/TODO/cadence/) and flip the toggle.
+Visit the [Cadence page on EGO](https://extensions.gnome.org/extension/10446/cadence/) and flip the toggle.
 
 ### Manual
 
