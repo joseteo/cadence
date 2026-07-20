@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+#
+# Install this working tree into the local GNOME Shell extensions directory.
+#
+# Intended for development: it mirrors the source into the directory GNOME loads
+# extensions from, then compiles the GSettings schema so preferences work.
+#
+# The destination must be a real directory rather than a symlink back to this
+# checkout. Installing or updating the extension from extensions.gnome.org replaces
+# the contents of that directory, which through a symlink would overwrite the source.
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+set -euo pipefail
+
+usage() {
+    cat <<'USAGE'
+Usage: ./deploy.sh [--help]
+
+Installs the extension from this checkout into
+${XDG_DATA_HOME:-~/.local/share}/gnome-shell/extensions/<uuid>
+
+Restart GNOME Shell afterwards to pick up JavaScript changes:
+  X11      Alt+F2, then "r", then Enter
+  Wayland  log out and back in
+USAGE
+}
+
+if [ "${1:-}" = "--help" ] || [ "${1:-}" = "-h" ]; then
+    usage
+    exit 0
+fi
+
+for cmd in rsync glib-compile-schemas; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "error: '$cmd' is required but not installed." >&2
+        exit 1
+    fi
+done
+
+SRC="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+
+# Read the uuid from metadata.json so the install path cannot drift from it.
+UUID="$(sed -n 's/.*"uuid"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "${SRC}/metadata.json")"
+if [ -z "$UUID" ]; then
+    echo "error: could not read \"uuid\" from ${SRC}/metadata.json" >&2
+    exit 1
+fi
+
+DEST="${XDG_DATA_HOME:-${HOME}/.local/share}/gnome-shell/extensions/${UUID}"
+
+if [ -L "$DEST" ]; then
+    echo "error: ${DEST} is a symlink; remove it and re-run." >&2
+    exit 1
+fi
+
+# rsync --delete would empty the source if both paths resolved to the same place.
+if [ -d "$DEST" ] && [ "$(cd -- "$DEST" && pwd -P)" = "$SRC" ]; then
+    echo "error: source and destination are the same directory." >&2
+    exit 1
+fi
+
+mkdir -p "$DEST"
+
+# Ship only what the extension needs at runtime.
+rsync -a --delete \
+    --exclude '.git/' \
+    --exclude '.github/' \
+    --exclude '*.md' \
+    --exclude '*.zip' \
+    --exclude '.gitignore' \
+    --exclude 'deploy.sh' \
+    -- "${SRC}/" "${DEST}/"
+
+glib-compile-schemas "${DEST}/schemas"
+
+echo "Installed ${UUID} to ${DEST}"
+echo "Restart GNOME Shell to load JavaScript changes (Alt+F2, r, Enter on X11)."
