@@ -40,7 +40,6 @@
 .cadence-title {
     font-weight: bold;
     font-size: 12px;
-    color: white;
     min-width: 0;
 }
 
@@ -48,9 +47,12 @@
     spacing: 8px;
 }
 
+/* Medium rather than regular: at this size a regular weight loses a noticeable part
+   of its contrast to antialiasing, and the colour alone then has to carry more than
+   it can. The title stays bold, so the hierarchy is unchanged. */
 .cadence-artist {
     font-size: 10px;
-    color: #cccccc;
+    font-weight: 500;
     min-width: 0;
 }
 
