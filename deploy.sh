@@ -18,7 +18,7 @@ usage() {
 Usage: ./deploy.sh [--help]
 
 Installs the extension from this checkout into
-${XDG_DATA_HOME:-~/.local/share}/gnome-shell/extensions/<uuid>
+~/.local/share/gnome-shell/extensions/<uuid>
 
 Restart GNOME Shell afterwards to pick up JavaScript changes:
   X11      Alt+F2, then "r", then Enter
@@ -47,7 +47,11 @@ if [ -z "$UUID" ]; then
     exit 1
 fi
 
-DEST="${XDG_DATA_HOME:-${HOME}/.local/share}/gnome-shell/extensions/${UUID}"
+# GNOME Shell loads extensions from the session's data directory. Deliberately not
+# using XDG_DATA_HOME: inside a confined terminal (a snap-packaged editor, a
+# container) that variable points into the sandbox, and the extension would be
+# installed somewhere the shell never reads.
+DEST="${HOME}/.local/share/gnome-shell/extensions/${UUID}"
 
 if [ -L "$DEST" ]; then
     echo "error: ${DEST} is a symlink; remove it and re-run." >&2
