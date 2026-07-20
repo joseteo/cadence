@@ -76,6 +76,16 @@ rsync -a --delete \
     --exclude 'deploy.sh' \
     -- "${SRC}/" "${DEST}/"
 
+# GNOME Shell checks extensions.gnome.org for updates and installs anything newer
+# on the next restart, which would silently replace this development build with the
+# published release. Declaring a high version in the installed copy only (never in
+# the checkout, since extensions.gnome.org assigns the real version on upload) keeps
+# the published release from ever looking newer.
+sed -i 's/"version"[[:space:]]*:[[:space:]]*[0-9]\+/"version": 9999/' "${DEST}/metadata.json"
+
+# Drop any update already staged for this uuid, which would be applied on restart.
+rm -rf "${HOME}/.local/share/gnome-shell/extension-updates/${UUID}"
+
 glib-compile-schemas "${DEST}/schemas"
 
 echo "Installed ${UUID} to ${DEST}"
