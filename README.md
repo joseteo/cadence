@@ -25,10 +25,15 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 - **Now playing** - title, artist, and album art right in the dock
 - **Playback controls** - previous, play/pause, next
-- **Adaptive tint** - background colour extracted from the album cover
+- **Adaptive tint** - background colour extracted from the album cover, with
+  automatic light/dark text depending on how bright the cover is
 - **Dock-native sizing** - blends in as if it were a regular dock icon
 - **Auto-hide** - disappears when nothing is playing
-- **Vertical dock support** - compact layout for left/right dock positions
+- **Vertical dock support** - compact prev / art / next column for left and right
+  docks, where the album art itself is the play/pause button
+- **Scroll and click** - scroll to change volume or skip tracks, click to raise the
+  player window
+- **Multi-monitor** - the primary dock only, or every dock
 
 ## Demo
 
