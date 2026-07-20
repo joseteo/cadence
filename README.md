@@ -25,8 +25,10 @@ and gives you at-a-glance track info plus controls without opening a window.
 
 - **Now playing** - title, artist, and album art right in the dock
 - **Playback controls** - previous, play/pause, next
-- **Adaptive tint** - background colour extracted from the album cover, with
-  automatic light/dark text depending on how bright the cover is
+- **Adaptive tint** - background colour extracted from the album cover
+- **Palette-aware text** - labels and glyphs take the cover's accent colour when it
+  reads cleanly against the card, and a curated tone from the card's own hue when it
+  does not, so the text is always legible without an outline
 - **Dock-native sizing** - blends in as if it were a regular dock icon
 - **Auto-hide** - disappears when nothing is playing
 - **Vertical dock support** - compact prev / art / next column for left and right
