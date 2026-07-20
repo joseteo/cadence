@@ -106,8 +106,11 @@ gnome-extensions prefs cadence@joseteo.github.com
 Cadence watches the D-Bus session bus for MPRIS players, tracks the most
 recently active one, and renders a St widget inside `dash._box`. Remote album
 art (e.g. Spotify's HTTPS URLs) is cached locally so the shell's texture system
-can load it. The dominant colour is extracted for the adaptive tint, with a
-luminance check to ensure readable text.
+can load it. The dominant colour drives the adaptive tint, and a second pass over
+the cover finds its accent colour. Because the card is translucent, the text and
+glyph colour is chosen against the tint *as composited over the dock* rather than
+against the cover itself, and is verified with WCAG contrast maths before it is
+used - so labels stay readable on any artwork without needing an outline.
 
 ## Contributing
 
